@@ -1,0 +1,84 @@
+.printOnly {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0b1b2b !important;
+  }
+
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .noPrint,
+  .actions {
+    display: none !important;
+  }
+
+  .printOnly {
+    display: block !important;
+  }
+
+  .content {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .printHeading {
+    margin-bottom: 8mm !important;
+    padding-bottom: 4mm !important;
+    border-bottom: 2px solid #bb922e !important;
+  }
+
+  .section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+    margin-bottom: 8mm !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .sectionHeader {
+    padding-bottom: 3mm !important;
+  }
+
+  .qrGrid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 5mm !important;
+    margin-top: 4mm !important;
+  }
+
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 4mm !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  .qrFrame {
+    width: 44mm !important;
+    height: 44mm !important;
+    padding: 2mm !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  .qrFrame svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

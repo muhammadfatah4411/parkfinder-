@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f8fc;
+  --foreground: #0b1b2b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: rgba(187, 146, 46, 0.28);
+}
+
+@keyframes hilite-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hilite-fade-up {
+  animation: hilite-fade-up 700ms ease-out both;
+}
+
+.hilite-fade-up-delay {
+  animation-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hilite-fade-up,
+  .hilite-fade-up-delay {
+    animation: none;
+  }
+}
